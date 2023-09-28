@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>フォーム複製</title>
+</head>
+<body>
+<form id="form">
+<div class="input-group">
+<input type="text" name="field[]" placeholder="入力項目">
+<button type="button" class="remove">削除</button>
+</div>
+</form>
+<button type="button" id="add">追加</button>
+
+ 
+
+    <script>
+        document.getElementById("add").addEventListener("click", function() {
+            const form = document.getElementById("form");
+            const inputGroup = document.querySelector(".input-group").cloneNode(true);
+            form.appendChild(inputGroup);
+            inputGroup.querySelector(".remove").addEventListener("click", function() {
+                form.removeChild(inputGroup);
+            });
+        });
+</script>
+</body>
+</html>
