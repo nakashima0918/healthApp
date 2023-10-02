@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,19 +7,25 @@
     <title>test</title>
 </head>
 <body>
-
 <?php
-// gestのtest
-    require_once './DBManager.php';
-    $dbmng = new DBManager();
-    $test = $dbmng->test();
-    $name;
-    foreach ($test as $row) {
-        $name = $row['user_name'];
-    }
-    echo '<h1>'.$name.'</h1>';
 
-    ?>
-    <h2>テスト用</h2>
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once 'DBManager.php';
+
+// DBManagerクラスのインスタンスを作成
+$dbManager = new DBManager();
+
+$pdo = $dbManager->dbConnect();
+$dbmng = new DBManager();
+$test = $dbmng->test();
+$name;
+foreach ($test as $row) {
+    $name = $row['user_name'];
+}
+echo '<h1>'.$name.'</h1>';
+
+?>
 </body>
 </html>
