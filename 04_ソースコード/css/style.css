@@ -1,1 +1,43 @@
 @charset "UTF-8";
+
+/* header
+------------------------------*/
+/*ロゴ*/
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+
+/*ヘッダーの文字の設定*/
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    /*text-transform: uppercase;  大文字にする*/
+    text-transform: lowercase;
+    margin-top: 34px;
+    list-style: none; /*左の・を非表示*/
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #432;
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+/*右にずらし余白を均等に割り振る*/
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+/*横幅*/
+.wrapper {
+    max-width: 3100px;/*1100px がいいかも*/
+    margin: 0 auto;
+    padding: 0 4%;
+}
+/*文字のグレーアウト*/
+.grayout {
+    color: #bfbfbf;
+}
