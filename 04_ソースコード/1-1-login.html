@@ -9,7 +9,7 @@
         body {
             background-color: #f0f0f0;
         }
-        
+
         .login-container {
             margin-top: 100px;
         }
@@ -30,6 +30,19 @@
         .login-header h2 {
             margin-bottom: 20px;
         }
+
+        .login-form {
+            text-align: left;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -42,13 +55,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ホーム</a>
+                    <a class="nav-link" href="4-1-home.html">ホーム</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ログイン</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">新規登録</a>
+                    <a class="nav-link" href="1-1-login.html">ログイン</a>
                 </li>
             </ul>
         </div>
@@ -60,7 +70,7 @@
                 <div class="login-header">
                     <h2>ログイン</h2>
                 </div>
-                <form>
+                <form class="login-form">
                     <div class="form-group">
                         <label for="username">ユーザー名</label>
                         <input type="text" class="form-control" id="username" placeholder="ユーザー名を入力してください">
@@ -71,6 +81,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">ログイン</button>
                 </form>
+                <div class="login-link">
+                    <a href="2-1-new_user.html">新規登録</a><br>
+                    <a href="3-1-reset_pass.html">パスワードを忘れた場合</a>
+                </div>
             </div>
         </div>
     </div>
