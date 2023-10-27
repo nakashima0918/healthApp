@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f0f0f0;
+            background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
-        
+
         .login-container {
             margin-top: 100px;
         }
@@ -18,7 +21,7 @@
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* 背景色を変更 */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -30,6 +33,29 @@
         .login-header h2 {
             margin-bottom: 20px;
         }
+
+        .login-form {
+            text-align: left;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #333; /* テキストカラーをダークグレーに設定 */
+        }   
+
+        .btn-primary {
+              background-color: #c7ecee; /* 明るい青緑色の背景 */
+              color: #333; /* テキストカラーをダークグレーに設定 */
+        }   
+
     </style>
 </head>
 
@@ -42,13 +68,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ホーム</a>
+                    <a class="nav-link" href="4-1-home.html">ホーム</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ログイン</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">新規登録</a>
+                    <a class="nav-link" href="1-1-login.html">ログイン</a>
                 </li>
             </ul>
         </div>
@@ -60,7 +83,7 @@
                 <div class="login-header">
                     <h2>ログイン</h2>
                 </div>
-                <form>
+                <form class="login-form">
                     <div class="form-group">
                         <label for="username">ユーザー名</label>
                         <input type="text" class="form-control" id="username" placeholder="ユーザー名を入力してください">
@@ -71,6 +94,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">ログイン</button>
                 </form>
+                <div class="login-link">
+                    <a href="2-1-new_user.html">新規登録</a><br>
+                    <a href="3-1-reset_pass.html">パスワードを忘れた場合</a>
+                </div>
             </div>
         </div>
     </div>

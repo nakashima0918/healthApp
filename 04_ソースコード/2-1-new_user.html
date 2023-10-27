@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f0f0f0;
+            background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         .registration-container {
@@ -18,7 +21,7 @@
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* 背景色を変更 */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -30,16 +33,44 @@
         .registration-header h2 {
             margin-bottom: 20px;
         }
+
+        /* 登録ボタンの背景色を変更 */
+        .btn-success {
+            background-color: #007BFF; /* 青色の背景 */
+            color: #fff; /* テキストカラーを白に設定 */
+        }
+
+        /* ログインリンクのテキストカラーをダークグレーに設定 */
+        .login-link a {
+            color: #333; /* テキストカラーをダークグレーに設定 */
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">健康アプリ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="4-1-home.html">ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="1-1-login.html">ログイン</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container registration-container">
         <div class="card registration-card">
             <div class="card-body">
                 <div class="registration-header">
-                    <h2>ユーザ新規登録</h2>
+                    <h3>新規登録</h3>
                 </div>
-                <form>
+                <form action="2-2-new_user_chk.html" method="post">
                     <div class="form-group">
                         <label for="username">ユーザー名</label>
                         <input type="text" class="form-control" id="username" placeholder="ユーザー名を入力してください">
