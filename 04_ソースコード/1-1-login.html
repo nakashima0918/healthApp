@@ -13,15 +13,23 @@
             background-repeat: no-repeat;
         }
 
+        /* ナビゲーションバーの背景色を設定 */
+        .navbar {
+            background-image: linear-gradient(to right, #0F2027 0%, #203A43 51%, #2C5364 100%);
+            background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+            background-color: transparent;
+            margin-bottom: 0; /* 下部の余白を削除 */
+        }
+
         .login-container {
-            margin-top: 100px;
+            margin-top: 5rem; /* 上部の余白を調整 */
         }
 
         .login-card {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* 背景色を変更 */
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -49,18 +57,17 @@
 
         .login-link a {
             color: #333; /* テキストカラーをダークグレーに設定 */
-        }   
+        }
 
         .btn-primary {
-              background-color: #c7ecee; /* 明るい青緑色の背景 */
-              color: #333; /* テキストカラーをダークグレーに設定 */
-        }   
-
+            background-color: #c7ecee; /* 明るい青緑色の背景 */
+            color: #333; /* テキストカラーをダークグレーに設定 */
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">健康アプリ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
