@@ -1,3 +1,9 @@
+<!--
+    <?php
+        session_start();
+    ?>
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,19 +48,15 @@
         }
 
         /* 登録ボタンの背景色を変更 */
-        .btn-success {
-            background-color: #007BFF; /* 青色の背景 */
-            color: #fff; /* テキストカラーを白に設定 */
-            border: none; /* ボーダーを削除 */
-        }
-
-        /* ボタンホバー時のスタイルを追加 */
-        .btn-success:hover {
-            background-color: #0056b3; /* ホバー時の背景色を変更 */
-        }
+       
 
         /* ログインリンクのテキストカラーをダークグレーに設定 */
         .login-link a {
+            color: #333; /* テキストカラーをダークグレーに設定 */
+        }
+
+        .btn-primary {
+            background-color: #c7ecee; /* 明るい青緑色の背景 */
             color: #333; /* テキストカラーをダークグレーに設定 */
         }
     </style>
@@ -100,7 +102,7 @@
                         <label for="confirm-password">パスワード確認</label>
                         <input type="password" class="form-control" id="confirm-password" placeholder="パスワードを再入力してください">
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">登録</button>
+                    <button type="submit" class="btn btn-primary btn-block">登録</button>
                 </form>
             </div>
         </div>
