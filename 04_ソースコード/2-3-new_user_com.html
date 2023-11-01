@@ -13,6 +13,13 @@
             background-repeat: no-repeat;
         }
 
+        /* ナビゲーションバーの背景色を設定 */
+        .navbar {
+            background-image: linear-gradient(to right, #0F2027 0%, #203A43 51%, #2C5364 100%);
+            background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+            background-color: transparent;
+        }
+
         .success-container {
             display: flex;
             justify-content: center;
@@ -36,16 +43,28 @@
             margin-bottom: 20px;
         }
 
-        /* ログインボタンのスタイルを修正 */
-        .btn-success {
-            background-color: #007BFF; /* 青色の背景 */
-            color: #fff; /* テキストカラーを白に設定 */
+        .btn-primary {
+            background-color: #c7ecee; /* 明るい青緑色の背景 */
+            color: #333; /* テキストカラーをダークグレーに設定 */
         }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class ="navbar-brand" href="#">健康アプリ</a>
+<body style="padding-top: 3rem">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">健康アプリ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="4-1-home.html">ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="1-1-login.html">ログイン</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container success-container">
@@ -54,7 +73,7 @@
                 <div class="success-header">
                     <h2>新規登録完了</h2>
                 </div>
-                <a href="1-1-login.html" class="btn btn-success btn-block">ログイン</a>
+                <a href="1-1-login.html" class="btn btn-primary btn-block">ログイン</a>
             </div>
         </div>
     </div>

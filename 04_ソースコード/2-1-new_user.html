@@ -1,3 +1,9 @@
+<!--
+    <?php
+        session_start();
+    ?>
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +19,22 @@
             background-repeat: no-repeat;
         }
 
+        /* ナビゲーションバーの背景色を変更 */
+        .navbar {
+            background-image: linear-gradient(to right, #0F2027 0%, #203A43 51%, #2C5364 100%);
+            background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+            background-color: transparent;
+        }
+
         .registration-container {
-            margin-top: 100px;
+            margin-top: 5rem;
         }
 
         .registration-card {
             max-width: 400px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* 背景色を変更 */
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -35,19 +48,21 @@
         }
 
         /* 登録ボタンの背景色を変更 */
-        .btn-success {
-            background-color: #007BFF; /* 青色の背景 */
-            color: #fff; /* テキストカラーを白に設定 */
-        }
+       
 
         /* ログインリンクのテキストカラーをダークグレーに設定 */
         .login-link a {
             color: #333; /* テキストカラーをダークグレーに設定 */
         }
+
+        .btn-primary {
+            background-color: #c7ecee; /* 明るい青緑色の背景 */
+            color: #333; /* テキストカラーをダークグレーに設定 */
+        }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="padding-top: 5rem">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">健康アプリ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,7 +83,7 @@
         <div class="card registration-card">
             <div class="card-body">
                 <div class="registration-header">
-                    <h3>新規登録</h3>
+                    <h2>新規登録</h2>
                 </div>
                 <form action="2-2-new_user_chk.html" method="post">
                     <div class="form-group">
@@ -87,7 +102,7 @@
                         <label for="confirm-password">パスワード確認</label>
                         <input type="password" class="form-control" id="confirm-password" placeholder="パスワードを再入力してください">
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">登録</button>
+                    <button type="submit" class="btn btn-primary btn-block">登録</button>
                 </form>
             </div>
         </div>
