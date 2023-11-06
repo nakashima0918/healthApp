@@ -187,4 +187,12 @@ aside p {
 /*スクロールさせない*/
 #user_info1 html,body{
     overflow: hidden
-  }
+}
+
+/*見出し*/
+.page-title {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
