@@ -76,14 +76,14 @@ img {
 .button:hover {
     background: #0090aa;
 }
-.i-button {
+.s-button {
     font-size: 0.688rem;
     background: #0bd;
     color: #fff;
     border-radius: 5px;
     padding: 9px 16px;
 }
-.i-button:hover {
+.s-button:hover {
     background: #0090aa;
 }
 
@@ -179,13 +179,13 @@ aside p {
 }
 
 /*背景色*/
-#user_info1 {
+#user_info {
     background-color: #FCF9EF;
     height:100vh;
 }
 
 /*スクロールさせない*/
-#user_info1 html,body{
+#user_info html,body{
     overflow: hidden
 }
 
@@ -195,4 +195,57 @@ aside p {
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
     font-weight: normal;
+}
+
+/* 5-3
+-----------------------------------------*/
+/*背景色*/
+#user_chk {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#user_chk html,body{
+    overflow: hidden
+}
+
+#user_chk h2 {
+    /* 文字の水平方向の中央揃え */
+  text-align: center;
+}
+
+/*ボタンの位置*/
+#user_chk .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
+ 
+/*5-4
+-------------------------------------------*/
+/*背景色*/
+#user_com {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#user_com html,body{
+    overflow: hidden
+}
+/*ボタンの位置*/
+#user_com .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
+
+ #user_com h2 {
+    /* 文字の水平方向の中央揃え */
+  text-align: center;
 }
