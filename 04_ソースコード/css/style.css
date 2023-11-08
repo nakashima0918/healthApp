@@ -249,3 +249,29 @@ aside p {
     /* 文字の水平方向の中央揃え */
   text-align: center;
 }
+
+/*9-1
+-------------------------------*/
+/*背景色*/
+#logout {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#logout html,body{
+    overflow: hidden
+}
+/*ボタンの位置*/
+#logout .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
+
+ #logout h2 {
+    /* 文字の水平方向の中央揃え */
+  text-align: center;
+}
