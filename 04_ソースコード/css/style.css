@@ -17,6 +17,12 @@ img {
     max-width: 100%;
 }
 
+/*戻るボタン*/
+.backb {
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
 /* header
 ------------------------------*/
 .page-header {
@@ -94,9 +100,39 @@ img {
         color: #0bd;
     }
 }
+/* 3-1
+------------------------------------------*/
+/*背景色*/
+#reset_pass {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#reset_pass html,body{
+    overflow: hidden
+}
+/*ボタンの位置*/
+#reset_pass .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
+
+ /* 文字の水平方向の中央揃え */
+#reset_pass h2 {
+    text-align: center;
+}
+
+/*入力画面の位置*/
+#mail {
+    width: 100%;
+}
 
 /* 5-1
-----------------------------------------------------------------------------*/
+-----------------------------------------------*/
 
 /* サイドバー */
 aside {
@@ -196,6 +232,45 @@ aside p {
     text-transform: uppercase;
     font-weight: normal;
 }
+
+/* 5-2
+-----------------------------------------*/
+/*背景色*/
+#user_chg {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#user_chg,body{
+    overflow: hidden
+}
+
+/* 文字の水平方向の中央揃え */
+#user_chg h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/*入力フィールド*/
+#user_chg .fild {
+    width: 50%; /*入力フィールドの長さ*/
+    height: 28px; /*入力フィールドの高さ*/
+    text-indent: 20px; /*グレー文字少し右*/
+    margin: 0 auto; /*入力フィールドの位置を真ん中*/
+    border: 1px solid #808080; /* 枠線を追加 */  
+    border-radius: 4px; /* 丸い角 */
+    margin-top: 20px;
+}
+
+/*ボタンの位置*/
+#user_chg .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
 
 /* 5-3
 -----------------------------------------*/
