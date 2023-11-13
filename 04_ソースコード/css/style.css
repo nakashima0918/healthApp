@@ -103,6 +103,56 @@ img {
 /* 3-1
 ------------------------------------------*/
 /*背景色*/
+#reset_pass_uchk {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#reset_pass_uchk html,body{
+    overflow: hidden
+}
+
+/*ボタンの位置*/
+#reset_pass_uchk .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+}
+
+ /* 文字の水平方向の中央揃え */
+#reset_pass_uchk h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#reset_pass_uchk h3 {
+    color: #696969;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*入力画面の位置*/
+#mail {
+    width: 100%;
+}
+
+/*入力フィールド*/
+#reset_pass_uchk .fild {
+    width: 40%; /*入力フィールドの長さ*/
+    height: 28px; /*入力フィールドの高さ*/
+    text-indent: 20px; /*グレー文字少し右*/
+    margin: 0 auto; /*入力フィールドの位置を真ん中*/
+    border: 1px solid #808080; /* 枠線を追加 */  
+    border-radius: 8px; /* 丸い角 */
+    border-width: 1.5px; /* 枠の太さ */
+}
+
+/* 3-2
+-----------------------------------------------*/
+/*背景色*/
 #reset_pass {
     background-color: #FCF9EF;
     height:100vh;
@@ -112,6 +162,25 @@ img {
 #reset_pass html,body{
     overflow: hidden
 }
+
+/* 文字の水平方向の中央揃え */
+#reset_pass h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*入力フィールド*/
+#reset_pass .fild {
+    width: 40%; /*入力フィールドの長さ*/
+    height: 28px; /*入力フィールドの高さ*/
+    text-indent: 20px; /*グレー文字少し右*/
+    margin: 0 auto; /*入力フィールドの位置を真ん中*/
+    border: 1px solid #808080; /* 枠線を追加 */  
+    border-radius: 8px; /* 丸い角 */
+    border-width: 1.5px; /* 枠の太さ */
+    margin-top: 40px;
+}
+
 /*ボタンの位置*/
 #reset_pass .s-button {
     display: block; /* ボタンをブロック要素に変更 */
@@ -121,14 +190,66 @@ img {
     margin-top: 50px;
  }
 
- /* 文字の水平方向の中央揃え */
-#reset_pass h2 {
-    text-align: center;
+/* 3-3
+----------------------------------------------*/
+/*背景色*/
+#reset_pass_chk {
+    background-color: #FCF9EF;
+    height:100vh;
 }
 
-/*入力画面の位置*/
-#mail {
-    width: 100%;
+/*スクロールさせない*/
+#reset_pass_chk html,body{
+    overflow: hidden
+}
+
+/* 文字の水平方向の中央揃え */
+#reset_pass_chk h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+ 
+/*パスワード : の位置*/
+#reset_pass_chk p {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/*ボタンの位置*/
+#reset_pass_chk .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+ }
+
+ /*3-4
+----------------------------------------------*/
+/*背景色*/
+#reset_pass_com {
+    background-color: #FCF9EF;
+    height:100vh;
+}
+
+/*スクロールさせない*/
+#reset_pass_com html,body{
+    overflow: hidden
+}
+
+/* 文字の水平方向の中央揃え */
+#reset_pass_com h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*ボタンの位置*/
+#reset_pass_com .s-button {
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 120px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 70px;
 }
 
 /* 5-1
