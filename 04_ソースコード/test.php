@@ -15,14 +15,14 @@ ini_set('display_errors', 1);
 require_once 'DBManager.php';
 
 // DBManagerクラスのインスタンスを作成
-$dbManager = new DBManager();
 
-$pdo = $dbManager->dbConnect();
 $dbmng = new DBManager();
 $test = $dbmng->test();
 $name;
 foreach ($test as $row) {
     $name = $row['user_name'];
+    echo '<h1>'.$name.'</h1>';
+    echo "\n";
 }
 echo '<h1>'.$name.'</h1>';
 
