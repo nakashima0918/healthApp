@@ -61,7 +61,7 @@
                     <a class="nav-link" href="4-1-home.html">ホーム</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="1-1-login.html">ログイン</a>
+                    <a class="nav-link" href="5-1-user_info.html">ユーザー</a>
                 </li>
             </ul>
         </div>
@@ -73,7 +73,7 @@
                 <div class="success-header">
                     <h2>新規登録完了</h2>
                 </div>
-                <a href="1-1-login.html" class="btn btn-primary btn-block">ログイン</a>
+                <a href="1-1-login.php" class="btn btn-primary btn-block">ログイン</a>
             </div>
         </div>
     </div>
