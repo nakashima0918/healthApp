@@ -1,0 +1,18 @@
+----- ヘッダー -----
+<header class="page-header wrapper">
+    <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="1-1-login.html">rogout</a></li>
+            <li><a href="5-1-user_info.html">user</a></li>
+            <li class="grayout">グレーアウト</li>
+        </ul>
+    </nav>
+</header>
+
+
+----- 戻るボタン -----
+<button class="backb" type="button" onclick="history.back()">戻る＞</button>
+
+
+----- 

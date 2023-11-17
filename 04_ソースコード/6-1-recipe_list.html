@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レシピ一覧</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin:0 auto;
+            padding: 20px;
+        }
+
+        .btn-back {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
     <header class="page-header wrapper">
         <h1>
-            <a href="home.html"><img class="logo" src="#" alt="ロゴ"></a>
+            <a href="home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a>
         </h1>
         <nav>
             <ul class="main-nav">
@@ -17,13 +38,15 @@
                 <li><a href="5-1-user_info.html">ユーザー</a></li>
             </ul>
             <div style="width: 70px">
-                <a href="#" class="btn-back">＜戻る</a>
+                <a href="#" class="btn-back">＜戻る</a></div>
               </div>
         </nav>
     </header>
 
-    <div class="recipe" onclick="window.location.href='Rrecipe_details.html'">
-        <img src="" alt="">
+    <div class="image-container">
+        <img src="" alt="画像１" onclick="window.location.href='Rrecipe_details.html';">
+        <img src="" alt="画像２" onclick="window.location.href='Rrecipe_details.html';">
+        <img src="" alt="画像３" onclick="window.location.href='Rrecipe_details.html';">
     </div>
 </body>
 </html>
