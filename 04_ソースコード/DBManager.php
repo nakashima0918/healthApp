@@ -1,6 +1,13 @@
 <?php
 class DBManager
 {
+	private $pdo; // PDOインスタンスを保持
+
+    public function __construct()
+    {
+        $this->pdo = $this->dbConnect();
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // エラーモードを設定
+    }
 
     // DB接続のメソッド
     private function dbConnect() {
@@ -26,6 +33,39 @@ class DBManager
 
     //以下処理---------------------------
 
+    public function checkEmailDuplicate($email)
+    {
+        // メールアドレスの重複をチェックする処理
+        $sql = "SELECT COUNT(*) as cnt FROM user WHERE address = ?";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute([$email]);
+            $record = $statement->fetch();
+        } catch (PDOException $e) {
+            // エラーメッセージを表示
+            echo "エラー: " . $e->getMessage();
+            return false; // エラーが発生した場合は false を返す
+        }
 
+        return $record['cnt'] > 0; // 重複があれば true、なければ false を返す
+    }
+
+    public function registerUser($name, $email, $password)
+    {
+        // 新しいユーザーをデータベースに登録する処理
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO user (user_name, address, password) VALUES (?, ?, ?)";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $success = $statement->execute([$name, $email, $hash]);
+        } catch (PDOException $e) {
+            // エラーメッセージを表示
+            echo "エラー: " . $e->getMessage();
+            return false; // エラーが発生した場合は false を返す
+        }
+
+        return $success; // 登録に成功した場合 true、失敗した場合 false を返す
+    }
 }
+
 ?>
