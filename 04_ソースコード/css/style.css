@@ -23,6 +23,14 @@ img {
     margin-top: 10px;
 }
 
+/* エラーの文字を真ん中 */
+.error-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    color: #721c24; /* エラーメッセージのテキスト色 */
+}
+
 /* header
 ------------------------------*/
 .page-header {
@@ -141,7 +149,7 @@ img {
 
 /*入力フィールド*/
 #reset_pass_uchk .fild {
-    width: 40%; /*入力フィールドの長さ*/
+    width: 40%; /*入力フィールドの長さ */
     height: 28px; /*入力フィールドの高さ*/
     text-indent: 20px; /*グレー文字少し右*/
     margin: 0 auto; /*入力フィールドの位置を真ん中*/
@@ -375,13 +383,13 @@ aside p {
 
 /*入力フィールド*/
 #user_chg .fild {
-    width: 50%; /*入力フィールドの長さ*/
+    width: 40%; /*入力フィールドの長さ*/
     height: 28px; /*入力フィールドの高さ*/
     text-indent: 20px; /*グレー文字少し右*/
     margin: 0 auto; /*入力フィールドの位置を真ん中*/
     border: 1px solid #808080; /* 枠線を追加 */  
     border-radius: 4px; /* 丸い角 */
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 /*ボタンの位置*/
