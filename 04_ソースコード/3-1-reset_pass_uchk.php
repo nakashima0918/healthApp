@@ -60,21 +60,23 @@ if (!empty($_POST)) {
         <h2>パスワードを忘れた</h2>
         <h3>メールアドレスを入力してください</h3>
 
-        <!-- エラー表示 -->
-        <?php
-        if ($_SESSION['error'] != "") {
-          echo '<div class="error">';
-          echo $_SESSION['error'];
-          echo '</div>';
-        }
-        ?>
+        <div class="error-container">
+            <!-- エラー表示 -->
+            <?php
+                if ($_SESSION['error'] != "") {
+                echo '<div class="error">';
+                echo $_SESSION['error'];
+                echo '</div>';
+                }
+            ?>
+        </div>
 
         <form action='3-2-reset_pass.php' method ='POST'>
         <div class="fild">
-            <input type="text" placeholder="メールアドレス" name = "mail"><br>
+            <input type="text" placeholder="メールアドレス" maxlength="30" name = "mail"><br>
         </div>
         <!-- <a class="s-button" href="3-2-reset_pass.php">リセットする</a> -->
-        <input type = "submit" value = "リセットする">
+        <input type="submit" class="s-button" value="リセットする">
         </form>
     </div>
     

@@ -39,6 +39,7 @@ $_SESSION['mail'] = $_POST['mail'];
 
     <h2>パスワードを変更する</h2>
 
+    <div class="error-container">
     <!-- エラー表示 -->
     <?php
         if ($_SESSION['error'] != "") {
@@ -47,15 +48,17 @@ $_SESSION['mail'] = $_POST['mail'];
           echo '</div>';
         }
     ?>
+    </div>
+    
     <form action='3-6-reset_pass_chk.php' method="POST">
         <div class="fild">
-            <input type="password" placeholder="パスワード" name="pass1"><br>
+            <input type="password" placeholder="パスワード" maxlength="15" name="pass1"><br>
         </div>
         <div class="fild">
-            <input type="password" placeholder="確認用パスワード" name="pass2"><br>
+            <input type="password" placeholder="確認用パスワード" maxlength="15" name="pass2"><br>
         </div>
         <!-- <a class="s-button" href="3-3-reset_pass_chk.php">変更する</a> -->
-        <input type="submit" value="変更する">
+        <input type="submit" class="s-button" value="変更する">
     </form>
     
 
