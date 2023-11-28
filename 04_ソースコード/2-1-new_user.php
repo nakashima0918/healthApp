@@ -44,22 +44,14 @@ if (!empty($_POST)) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>アカウント作成</title>
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
     <style>
-         body {
-            background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+        .new_user-body{
+         overflow-y: scroll; /* 垂直方向のスクロールを有効にする */
         }
 
-        /* ナビゲーションバーの背景色を変更 */
-        .navbar {
-            background-image: linear-gradient(to right, #0F2027 0%, #203A43 51%, #2C5364 100%);
-            background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
-            background-color: transparent;
-        }
         .registration-container {
             margin-top: 5rem;
         }
@@ -92,23 +84,16 @@ if (!empty($_POST)) {
         }
     </style>
 </head>
-<body style="padding-top: 5rem">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">健康アプリ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="4-1-home.html">ホーム</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="5-1-user_info.html">ユーザー</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body class="new_user-body">
+    <header class="page-header wrapper">
+        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="9-1-logout.html">rogout</a></li>
+                    <li class="grayout">user</li>
+                </ul>
+            </nav>
+    </header>
 
     <div class="container registration-container">
         <div class="card registration-card">
@@ -117,7 +102,7 @@ if (!empty($_POST)) {
               <h2>新規登録</h2>
             </div>    
         <form action="" method="POST">
-            <p>当サービスをご利用するために、次のフォームに必要事項をご記入ください。</p>
+           
             <br>
 
             <div class="control">

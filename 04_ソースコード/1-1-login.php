@@ -1,27 +1,53 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+require_once "./DBManager.php"; // DBManagerクラスのファイルを読み込む
+session_start(); // セッションを開始
+
+// ログインが試行された場合
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // ユーザーが入力したメールアドレスとパスワードを取得
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    // DBManagerクラスのインスタンスを作成
+  // ...（以前のコード）
+
+// DBManagerクラスのインスタンスを作成
+	$dbManager = new DBManager();
+
+// データベースに接続できるかテスト
+	$testResult = $dbManager->test();
+
+// データベースにユーザーが存在し、かつパスワードが一致するか確認
+	$user = $dbManager->getUserByEmail($email);
+
+	if ($user && password_verify($password, $user['password'])) {
+    // パスワードが一致した場合はセッションにユーザーIDを保存し、ホームページにリダイレクト
+   	 $_SESSION["user_id"] = $user['id'];
+    	header("Location: 4-1-home.html");
+    	exit();
+    } else {
+   	 // ユーザーが存在しないか、パスワードが一致しない場合はエラーメッセージを表示
+    	$error_message = "メールアドレスまたはパスワードが正しくありません。";
+    }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>健康アプリ ログイン</title>
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+        .login-body {
+        overflow-y: scroll; /* 垂直方向のスクロールを有効にする */
         }
-
-        /* ナビゲーションバーの背景色を設定 */
-        .navbar {
-            background-image: linear-gradient(to right, #0F2027 0%, #203A43 51%, #2C5364 100%);
-            background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
-            background-color: transparent;
-            margin-bottom: 0; /* 下部の余白を削除 */
-        }
-
+        
         .login-container {
             margin-top: 5rem; /* 上部の余白を調整 */
         }
@@ -67,23 +93,16 @@
     </style>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">健康アプリ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="4-1-home.html">ホーム</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="1-1-login.html">ログイン</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body class="login-body">
+<header class="page-header wrapper">
+        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="9-1-logout.html">rogout</a></li>
+                    <li class="grayout">user</li>
+                </ul>
+            </nav>
+    </header>
 
     <div class="container login-container">
         <div class="card login-card">
@@ -91,14 +110,19 @@
                 <div class="login-header">
                     <h2>ログイン</h2>
                 </div>
-                <form class="login-form" action="4-1-home.html" method="post">
+                <?php if (!empty($error_message)): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $error_message; ?>
+                    </div>
+                <?php endif; ?>
+                <form class="login-form" action="" method="post">
                     <div class="form-group">
-                        <label for="username">ユーザー名</label>
-                        <input type="text" class="form-control" id="username" placeholder="ユーザー名を入力してください">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="メールアドレスを入力してください">
                     </div>
                     <div class="form-group">
                         <label for="password">パスワード</label>
-                        <input type="password" class="form-control" id="password" placeholder="パスワードを入力してください">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="パスワードを入力してください">
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">ログイン</button>
                 </form>
