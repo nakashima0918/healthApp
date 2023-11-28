@@ -1,3 +1,34 @@
+<?php
+//require_once "./DBManager.php";
+session_start();
+
+//$dbManager = new DBManager();
+
+// POSTリクエストからユーザーとパスを取得
+$username_input = $_POST['username'];
+$password_input = $_POST['password'];
+
+if (!empty($_POST)) {
+    // エラーを格納する配列を初期化
+    $error = array(); 
+
+    // 未入力チェック
+    if (empty($_POST['password'])) {
+        $error['password'] = "blank";
+    }
+
+    // 未入力がないか
+    if (empty($error)) {
+        $_SESSION['join'] = $_POST;
+        header('Location: 3-2-reset_pass.php');
+        exit();
+    }
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -28,10 +59,25 @@
     <div class="big-bg" class="reset_pass">
         <h2>パスワードを忘れた</h2>
         <h3>メールアドレスを入力してください</h3>
-        <div class="fild">
-            <input type="text" placeholder="メールアドレス"><br>
+
+        <div class="error-container">
+            <!-- エラー表示 -->
+            <?php
+                if ($_SESSION['error'] != "") {
+                echo '<div class="error">';
+                echo $_SESSION['error'];
+                echo '</div>';
+                }
+            ?>
         </div>
-        <a class="s-button" href="3-2-reset_pass.html">リセットする</a>
+
+        <form action='3-2-reset_pass.php' method ='POST'>
+        <div class="fild">
+            <input type="text" placeholder="メールアドレス" maxlength="30" name = "mail"><br>
+        </div>
+        <!-- <a class="s-button" href="3-2-reset_pass.php">リセットする</a> -->
+        <input type="submit" class="s-button" value="リセットする">
+        </form>
     </div>
     
 </body>

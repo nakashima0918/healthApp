@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
                 <div class="login-link">
                     <a href="2-1-new_user.php">新規登録</a><br>
-                    <a href="3-1-reset_pass.html">パスワードを忘れた場合</a>
+                    <a href="3-1-reset_pass_uchk.php">パスワードを忘れた場合</a>
                 </div>
             </div>
         </div>

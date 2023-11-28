@@ -66,6 +66,61 @@ class DBManager
 
         return $success; // 登録に成功した場合 true、失敗した場合 false を返す
     }
+
+    // ユーザーのパスワードを更新
+    public function updatePass($mail, $pass) {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE user SET password = ? WHERE address = ?;";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $pass, PDO::PARAM_STR);
+        $ps->bindValue(2, $mail, PDO::PARAM_STR);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
+
+    // ユーザー名を更新
+    public function updateName($uId, $name) {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE user SET user_name = ? WHERE address = ?;";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $name, PDO::PARAM_STR);
+        $ps->bindValue(2, $uId, PDO::PARAM_STR);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
+
+    // ユーザー情報取得
+    public function userInfoGet($uId) {
+        $pdo = $this->dbConnect();
+        $sql = "SELECT * FROM user WHERE user_id = ?";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $uId, PDO::PARAM_STR);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
+
+    //ユーザー情報の更新
+    public function updateinfo($name, $address, $password, $m_goal, $c_goal, $uId) {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE `user` SET `user_name`=?,`address`=?,`password`=?,`m_goal`=?,`c_goal`=? WHERE user_id=?";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $name, PDO::PARAM_STR);
+        $ps->bindValue(2, $address, PDO::PARAM_STR);
+        $ps->bindValue(3, $password, PDO::PARAM_STR);
+        $ps->bindValue(4, $m_goal, PDO::PARAM_INT);
+        $ps->bindValue(5, $c_goal, PDO::PARAM_INT);
+        $ps->bindValue(6, $uId, PDO::PARAM_INT);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
 }
 
 ?>
