@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="logout">
+    <header class="page-header wrapper">
+        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="2-1-new_user.php">新規登録</a></li>
+                <li><a href="1-1-login.php">ログイン</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="big-bg">
-        <h2>ログアウトしました</h2>
-        <a class="s-button" href="1-1-login.html">ログイン画面へ</a>
+        <h2>ログアウトしますか？</h2>
+        <!-- <form action='9-2-logout.php' method ='POST'>
+            <input type="submit" class="s-button" value="ログアウト">
+        </form> -->
+        <a href="9-2-logout.php" class="s-button">ログアウト</a>
     </div>
 </body>
 </html>
