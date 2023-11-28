@@ -1,0 +1,30 @@
+<?php
+session_start();
+$_SESSION = array();
+session_destroy();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログアウト完了画面</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body id="logout">
+    <header class="page-header wrapper">
+        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="2-1-new_user.php">新規登録</a></li>
+                <li><a href="1-1-login.php">ログイン</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="big-bg">
+        <h2>ログアウトしました</h2>
+        <a class="s-button" href="1-1-login.php">ログイン画面へ</a>
+    </div>
+</body>
+</html>
