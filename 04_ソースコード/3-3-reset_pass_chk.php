@@ -21,12 +21,12 @@ $_SESSION['error'] = "";
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body id="reset_pass_chk">
-    <header class="page-header wrapper">
-        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+<header class="page-header wrapper">
+        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
         <nav>
             <ul class="main-nav">
-                <li><a href="1-1-login.html">rogin</a></li>
-                <li class="grayout">user</li>
+                <li><a href="2-1-new_user.php">新規登録</a></li>
+                <li><a href="1-1-login.php">ログイン</a></li>
             </ul>
         </nav>
     </header>
