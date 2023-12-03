@@ -19,6 +19,9 @@
         height : 200px;
         margin-right : 20%;
         margin-left : 20%;
+        margin-top: 60px;
+        display: grid;
+        place-items: center;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
     }
     .container{
@@ -27,9 +30,9 @@
     .box2{
         text-align: center;
         padding: 5%;
-        height : 100px;
-        margin-left: 20%;
-        margin-right: 20%;
+        height : 150px;
+        margin-left: 10%;
+        margin-right: 10%;
         margin-top: 10%;
         display : inline-block;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
@@ -87,8 +90,10 @@ try {
         <button>＜戻る</button>
     </div>
     <div class="box"  id="momentumBox">
+        <div>
             <h2>一日の摂取カロリー</h2>
             <h2>kcal</h2>
+        </div>
     </div>
     <div class ="container" id="calorie">
         <div class="box2" id="momentumBox2">
@@ -103,6 +108,8 @@ try {
         </div>
     </div>
     <div class="add"><button>add</button></div>
-    <div><button>reset</button></div>
+    <div class="reset" id="reset">
+        <button>reset</button>
+    </div>
 </body>
 </html>
