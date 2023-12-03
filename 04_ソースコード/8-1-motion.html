@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>栄養</title>
+    <title>運動</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .navbar {
@@ -11,31 +11,27 @@
             background-image: linear-gradient(to right, #11998e 0%, #38ef7d 100%);
             background-color: transparent;
             margin-bottom: 0; /* 下部の余白を削除 */
-        }        .box{
+        }
+        .box{
+            text-align: center;
             margin : auto;
             width  : 800px;
             height : 200px;
             background : linear-gradient(to bottom,#cccccc, #cccccc);
         }
         .box2{
+            text-align: center;
             margin : auto;
             width : 200px;
             height : 100px;
             background : linear-gradient(to bottom,#cccccc, #cccccc);
         }
         .box3{
+            text-align: center;
             margin : auto;
             width : 200px;
             height : 100px;
             background : linear-gradient(to bottom,#cccccc, #cccccc);
-        }
-        .total{
-            width: 50%;
-            height: 50%;
-        }
-        .SpoAdd{
-            width: 50%;
-            height: 50%;
         }
     </style>
 </head>
@@ -65,13 +61,11 @@
             <h2>kcal</h2>
         </div>
     </div>
-    <div>
-        <div class="box2">
-            <div class="total">合計運動量</div>
-        </div>
-        <div class="box3">
-            <div class="SpoAdd">運動量の追加</div>
-        </div>
+    <div class="box2" id="SpoTotal">
+        <h3>合計運動量</h3>
+    </div>
+    <div class="box3" id="SpoAdd">
+        <h3>運動量の追加</h3>
     </div>
     <div class="add"><button>add</button></div>
     <div><button>reset</button></div>

@@ -1,3 +1,11 @@
+<?php
+require_once "./DBManager.php";
+session_start();
+
+$_SESSION['error'] = "";
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -26,7 +34,7 @@
     <button class="backb" type="button" onclick="history.back()">戻る＞</button>
 
     <h2>こちらの内容で間違いありませんか？</h2>
-    <p>パスワード : a</p>
+    <p>パスワード : <?php echo $_SESSION['input_pass'];?></p>
     <a class="s-button" href="3-4-reset_pass_com.html">変更する</a>
 </body>
 </html>
