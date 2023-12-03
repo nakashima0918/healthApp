@@ -18,23 +18,55 @@
         margin : auto;
         width  : 800px;
         height : 200px;
+        margin-right : 20%;
+        margin-left : 20%;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
+    }
+    .container{
+        display: flex;
     }
     .box2{
-        display: inline-block;
-        margin : auto;
+        text-align: center;
+        padding: 5%;
         width : 200px;
         height : 100px;
-        background : linear-gradient(to bottom,#cccccc, #cccccc);
-    }
-    .box3{
-        display: inline-block;
-        margin : auto;
-        width : 200px;
-        height : 100px;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 10%;
+        display : inline-block;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
     }
 </style>
+<!--<?php
+ 
+try {
+    // DB接続
+    $pdo = new PDO(
+        // ホスト名、データベース名
+        'mysql:host=localhost;dbname=healthApp;',
+        // ユーザー名
+        'root',
+        // パスワード
+        '',
+        // レコード列名をキーとして取得させる
+        [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
+    );
+    $stmt = $pdo->prepare('INSERT INTO users (c_date_id, user_id, total_calorie, calorie) VALUES(:id, :name, :address, :tel)');
+ 
+    // 値をセット
+    $stmt->bindValue(':', );
+    $stmt->bindValue(':', );
+    $stmt->bindValue(':',);
+    $stmt->bindValue(':',);
+ 
+    // SQL実行
+    $stmt->execute();
+ 
+} catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+}
+?> -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -57,18 +89,19 @@
         <button>＜戻る</button>
     </div>
     <div class="box"  id="momentumBox">
-        <div class="goal" id="momentum" >
             <h2>一日の摂取カロリー</h2>
             <h2>kcal</h2>
-        </div>
     </div>
-    <div></div>
-    <div>
+    <div class ="container" id="calorie">
         <div class="box2" id="momentumBox2">
-            取得カロリー
+            <h3>取得カロリー</h3>
         </div>
-        <div class="box3" id="momentumBox3">
-            カロリーの追加
+        <div class="box2" id="momentumBox2">
+            <h3>カロリーの追加</h3>
+            <input type ="number" 
+            min="0"
+            max="9999"
+            oninput="javascript: this.value = this.value.slice(0, 4);"> 
         </div>
     </div>
     <div class="add"><button>add</button></div>
