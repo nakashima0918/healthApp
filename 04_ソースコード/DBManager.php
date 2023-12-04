@@ -121,6 +121,21 @@ class DBManager
         $result = $ps->fetchAll();
         return $result;
     }
+    public function calorieregist($t_calorie, $calorie)
+    {
+        // ユーザーの食事のカロリーをデータベースに登録する処理
+        $sql = "INSERT INTO calorie ( total_calorie, calorie) VALUES (?, ?)";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $success = $statement->execute([$t_calorie, $]);
+        } catch (PDOException $e) {
+            // エラーメッセージを表示
+            echo "エラー: " . $e->getMessage();
+            return false; // エラーが発生した場合は false を返す
+        }
+
+        return $success; // 登録に成功した場合 true、失敗した場合 false を返す
+    }
 }
 
 ?>
