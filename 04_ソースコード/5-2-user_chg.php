@@ -21,18 +21,18 @@ session_start();
      <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body id="user_chg">
-    <header class="page-header wrapper">
-        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="9-1-logout.html">rogout</a></li>
-                <li class="grayout">user</li>
-            </ul>
-        </nav>
-    </header>
+<header class="page-header wrapper">
+            <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="9-1-logout.html">ログアウト</a></li>
+                    <li class="grayout">ユーザー</li>
+                </ul>
+            </nav>
+        </header>
 
 
-    <button class="backb" type="button" onclick="history.back()">戻る＞</button>
+        <button class="backb" type="button" onclick="history.back()">戻る＞</button>
 
     <h2>ユーザー情報変更</h2>
     <br>
@@ -49,13 +49,14 @@ session_start();
             <input type="text" placeholder="ユーザー名" maxlength="20" name="name"><br>
         </div>
         <div class="fild">
-            <input type="text" placeholder="メールアドレス" maxlength="30" name="mail"><br>
+            <input type="email" placeholder="メールアドレス" maxlength="30" name="mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+><br>
         </div>
         <div class="fild">
-            <input type="text" placeholder="パスワード" maxlength="15" name="pass1"><br>
+            <input type="password" placeholder="パスワード" maxlength="15" name="pass1" pattern="[a-zA-Z0-9]+" title="パスワードは半角英数字で入力してください。"><br>
         </div>
         <div class="fild">
-            <input type="text" placeholder="確認用パスワード" maxlength="15" name="pass2"><br>
+            <input type="password" placeholder="確認用パスワード" maxlength="15" name="pass2" pattern="[a-zA-Z0-9]+" title="パスワードは半角英数字で入力してください。"><br>
         </div>
         <div class="fild">
             <input type="text" placeholder="目標運動量" maxlength="7" name="motion"><br>

@@ -52,10 +52,10 @@ $_SESSION['mail'] = $_POST['mail'];
     
     <form action='3-6-reset_pass_chk.php' method="POST">
         <div class="fild">
-            <input type="password" placeholder="パスワード" maxlength="15" name="pass1"><br>
+            <input type="password" placeholder="パスワード" maxlength="15" name="pass1" pattern="[a-zA-Z0-9]+" title="パスワードは半角英数字で入力してください。"><br>
         </div>
         <div class="fild">
-            <input type="password" placeholder="確認用パスワード" maxlength="15" name="pass2"><br>
+            <input type="password" placeholder="確認用パスワード" maxlength="15" name="pass2" pattern="[a-zA-Z0-9]+" title="パスワードは半角英数字で入力してください。"><br>
         </div>
         <!-- <a class="s-button" href="3-3-reset_pass_chk.php">変更する</a> -->
         <input type="submit" class="s-button" value="変更する">
