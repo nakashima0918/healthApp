@@ -24,9 +24,6 @@ if (!empty($_POST)) {
         exit();
     }
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +70,7 @@ if (!empty($_POST)) {
 
         <form action='3-8-reset_pass_adchk.php' method ='POST'>
         <div class="fild">
-            <input type="text" placeholder="メールアドレス" maxlength="30" name = "mail"><br>
+            <input type="email" placeholder="メールアドレス" maxlength="30" name = "mail" pattern=".+\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]"><br>
         </div>
         <!-- <a class="s-button" href="3-2-reset_pass.php">リセットする</a> -->
         <input type="submit" class="s-button" value="リセットする">

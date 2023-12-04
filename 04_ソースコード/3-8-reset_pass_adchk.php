@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
 // メールアドレスが存在しない場合はエラーを出力
 if ($result->num_rows == 0) {
-    $_SESSION['error'] = "メールアドレスが登録されていまっせん。";
+    $_SESSION['error'] = "メールアドレスが登録されていません。";
     header('Location: 3-1-reset_pass_uchk.php');
 } else {
     header('Location: 3-2-reset_pass.php');
