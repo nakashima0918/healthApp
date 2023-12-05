@@ -1,40 +1,36 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-require_once "./DBManager.php"; // DBManagerクラスのファイルを読み込む
-session_start(); // セッションを開始
-
-// ログインが試行された場合
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // ユーザーが入力したメールアドレスとパスワードを取得
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    // DBManagerクラスのインスタンスを作成
-  // ...（以前のコード）
+require_once 'DBManager.php';
 
 // DBManagerクラスのインスタンスを作成
-	$dbManager = new DBManager();
+$dbManager = new DBManager();
 
-// データベースに接続できるかテスト
-	$testResult = $dbManager->test();
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// データベースにユーザーが存在し、かつパスワードが一致するか確認
-	$user = $dbManager->getUserByEmail($email);
+    // DBManagerクラスのインスタンスを作成
+    $dbManager = new DBManager();
 
-	if ($user && password_verify($password, $user['password'])) {
-    // パスワードが一致した場合はセッションにユーザーIDを保存し、ホームページにリダイレクト
-   	 $_SESSION["user_id"] = $user['id'];
-    	header("Location: 4-1-home.html");
-    	exit();
+    // データベースに接続できるかテスト
+    $testResult = $dbManager->test();
+    $user = $dbManager->getUserByEmail($email);
+
+    if ($user && password_verify($password, $user['password'])) {
+        // パスワードが一致した場合はセッションにユーザーIDを保存し、ホームページにリダイレクト
+        $_SESSION["user_id"] = $user['user_id'];
+        header("Location: 4-1-home.html");
+        exit();
     } else {
-   	 // ユーザーが存在しないか、パスワードが一致しない場合はエラーメッセージを表示
-    	$error_message = "メールアドレスまたはパスワードが正しくありません。";
+        // ユーザーが存在しないか、パスワードが一致しない場合はエラーメッセージを表示
+        $error_message = "メールアドレスまたはパスワードが正しくありません。";
+        echo $error_message;
     }
-
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
