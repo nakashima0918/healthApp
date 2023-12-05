@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>栄養</title>
+    <title>運動</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .navbar {
@@ -13,33 +13,60 @@
             margin-bottom: 0; /* 下部の余白を削除 */
         }
         .box{
-            display: flex;
-            text-align:center;
-            justify-content: center;
-            margin : auto;
-            width  : 800px;
-            height : 200px;
-            background : linear-gradient(to bottom,#cccccc, #cccccc);
+        text-align: center;
+        margin : auto;
+        height : 200px;
+        margin-right : 20%;
+        margin-left : 20%;
+        margin-top: 60px;
+        display: grid;
+        place-items: center;
+        background : linear-gradient(to bottom,#cccccc, #cccccc);
+        }
+        .container{
+        display: flex;
         }
         .box2{
-            display: flex;
-            text-align:center;
-            justify-content: center;
-            margin : auto;
-            width : 200px;
-            height : 100px;
-            background : linear-gradient(to bottom,#cccccc, #cccccc);
+        text-align: center;
+        padding: 5%;
+        height : 120px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10%;  
+        background : linear-gradient(to bottom,#cccccc, #cccccc);
         }
-        .box3{
-            display: flex;
-            text-align:center;
-            justify-content: center;
-            margin : auto;
-            width : 200px;
-            height : 100px;
-            background : linear-gradient(to bottom,#cccccc, #cccccc);
-        }
+        
     </style>
+    <!--<?php
+ 
+try {
+    // DB接続
+    $pdo = new PDO(
+        // ホスト名、データベース名
+        'mysql:host=localhost;dbname=healthApp;',
+        // ユーザー名
+        'root',
+        // パスワード
+        '',
+        // レコード列名をキーとして取得させる
+        [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
+    );
+    $stmt = $pdo->prepare('INSERT INTO users (c_date_id, user_id, total_calorie, calorie) VALUES(:id, :name, :address, :tel)');
+ 
+    // 値をセット
+    $stmt->bindValue(':', );
+    $stmt->bindValue(':', );
+    $stmt->bindValue(':',);
+    $stmt->bindValue(':',);
+ 
+    // SQL実行
+    $stmt->execute();
+ 
+} catch (PDOException $e) {
+    // エラー発生
+    echo $e->getMessage();
+}
+?> -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,17 +89,22 @@
         <button>＜戻る</button>
     </div>
     <div class="box"  id="momentumBox">
-        <div class="goal" id="momentum" >
+        <div>
             <h2>目標運動量</h2>
             <h2>kcal</h2>
         </div>
     </div>
-    <div>
-        <div class="box2">
-            合計運動量
+    <div class="container" id="calorie">
+        <div class="box2" id="SpoTotal">
+            合計運動量<br>
+            kcal
         </div>
-        <div class="box3">
-            運動量の追加
+        <div class="box2" id="SpoAdd">
+            <p>運動量の追加</p><br>
+            <input type ="number" 
+            min="0"
+            max="9999999"
+            oninput="javascript: this.value = this.value.slice(0, 7);"> kcal
         </div>
     </div>
     <div class="add"><button>add</button></div>

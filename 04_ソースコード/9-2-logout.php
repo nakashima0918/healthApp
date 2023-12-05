@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION = array();
+session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +23,8 @@
         </nav>
     </header>
     <div class="big-bg">
-        <h2>ログアウトしますか？</h2>
-        <!-- <form action='9-2-logout.php' method ='POST'>
-            <input type="submit" class="s-button" value="ログアウト">
-        </form> -->
-        <a href="9-2-logout.php" class="s-button">ログアウト</a>
+        <h2>ログアウトしました</h2>
+        <a class="s-button" href="1-1-login.php">ログイン画面へ</a>
     </div>
 </body>
 </html>

@@ -427,6 +427,12 @@ aside p {
     width: 100px; /* 必要に応じてボタンの幅を設定 */
     margin-top: 50px;
  }
+
+ /* 文字の間隔の調整 */
+ #user_chk .big-bg .adjustment {
+    margin-left: 420px;
+    margin-bottom: 10px;
+ }
  
 /*5-4
 -------------------------------------------*/

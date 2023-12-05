@@ -5,7 +5,6 @@ $dbmng = new DBManager();
 
 $_SESSION['user_id'] = 3;
 
-
 // // フォームから送信された新しい情報
 // $newName = isset($_POST['new_name']) ? $_POST['new_name'] : '';
 // $newMail = isset($_POST['new_mail']) ? $_POST['new_mail'] : '';

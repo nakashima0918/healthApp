@@ -121,6 +121,64 @@ class DBManager
         $result = $ps->fetchAll();
         return $result;
     }
+    public function calorieregist($t_calorie, $calorie)
+    {
+        // ユーザーの食事のカロリーをデータベースに登録する処理
+        $sql = "INSERT INTO calorie ( total_calorie, calorie) VALUES (?, ?)";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $success = $statement->execute([$t_calorie, $calorie]);
+        } catch (PDOException $e) {
+            // エラーメッセージを表示
+            echo "エラー: " . $e->getMessage();
+            return false; // エラーが発生した場合は false を返す
+        }
+
+        return $success; // 登録に成功した場合 true、失敗した場合 false を返す
+    }
+    public function motionregist($t_movement, $movement)
+    {
+        // ユーザーのカロリーをデータベースに登録する処理
+        $sql = "INSERT INTO motion ( total_movement, movement) VALUES (?, ?)";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $success = $statement->execute([$t_movement, $movement]);
+        } catch (PDOException $e) {
+            // エラーメッセージを表示
+            echo "エラー: " . $e->getMessage();
+            return false; // エラーが発生した場合は false を返す
+        }
+
+        return $success; // 登録に成功した場合 true、失敗した場合 false を返す
+    }
+    public function calorieupdate($t_calorie, $calorie) {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE `calorie` SET `total_movement`=?,`movement`=?, WHERE user_id=?";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $t_calorie, PDO::PARAM_INT);
+        $ps->bindValue(2, $calorie, PDO::PARAM_INT);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
+    public function motionupdate($t_movement, $movement) {
+        $pdo = $this->dbConnect();
+        $sql = "UPDATE `motion` SET `total_movement`=?,`movement`=?, WHERE user_id=?";
+
+        $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $t_movement, PDO::PARAM_INT);
+        $ps->bindValue(2, $movement, PDO::PARAM_INT);
+        $ps->execute();
+        $result = $ps->fetchAll();
+        return $result;
+    }
+    public function coloriedelete($t_calorie, $calorie) {
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM calorie WHERE user_id = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->execute(["user_id"]);
+    }
 }
 
 ?>

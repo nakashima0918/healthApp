@@ -24,9 +24,6 @@ if (!empty($_POST)) {
         exit();
     }
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +42,11 @@ if (!empty($_POST)) {
 </head>
 <body id="reset_pass_uchk">
     <header class="page-header wrapper">
-        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
         <nav>
             <ul class="main-nav">
-                <li><a href="1-1-login.html">rogin</a></li>
-                <li class="grayout">user</li>
+                <li><a href="2-1-new_user.php">新規登録</a></li>
+                <li><a href="1-1-login.php">ログイン</a></li>
             </ul>
         </nav>
     </header>
@@ -71,9 +68,9 @@ if (!empty($_POST)) {
             ?>
         </div>
 
-        <form action='3-2-reset_pass.php' method ='POST'>
+        <form action='3-8-reset_pass_adchk.php' method ='POST'>
         <div class="fild">
-            <input type="text" placeholder="メールアドレス" maxlength="30" name = "mail"><br>
+            <input type="email" placeholder="メールアドレス" maxlength="30" name = "mail" pattern=".+\.[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]"><br>
         </div>
         <!-- <a class="s-button" href="3-2-reset_pass.php">リセットする</a> -->
         <input type="submit" class="s-button" value="リセットする">
