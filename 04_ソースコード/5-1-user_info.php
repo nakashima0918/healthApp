@@ -59,7 +59,7 @@ $_SESSION['error'] = "";
                 <!--サイドバー部分-->
                 <h3 class="sub-title">一覧の表示</h3>
                 <ul class="sub-menu">
-                    <li><a href="6-3-recipe submission.html">投稿したレシピ</a></li><!--6-3-->
+                    <!-- <li><a href="6-3-recipe submission.html">投稿したレシピ</a></li>6-3 -->
                     <li><a href="6-1-recipe_list.html">レシピ一覧</a></li><!--6-1-->
                     <li><a href="7-1-nutrition.html">健康</a></li><!--7-1-->
                     <li><a href="8-1-motion.html">運動</a></li><!--8-1-->
