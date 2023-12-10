@@ -121,13 +121,13 @@ class DBManager
         $result = $ps->fetchAll();
         return $result;
     }
-    public function calorieregist($t_calorie, $calorie)
+    public function calorieregist($c_date, $uId, $t_calorie, $calorie)
     {
         // ユーザーの食事のカロリーをデータベースに登録する処理
-        $sql = "INSERT INTO calorie ( total_calorie, calorie) VALUES (?, ?)";
+        $sql = "INSERT INTO calorie (c_date_id, user_id, total_calorie, calorie) VALUES (?, (SELECT 'calorie' FROM 'user' WHERE 'user_id' = ?), ?, ?)";
         try {
             $statement = $this->pdo->prepare($sql);
-            $success = $statement->execute([$t_calorie, $calorie]);
+            $success = $statement->execute([$c_date, $uId, $t_calorie, $calorie]);
         } catch (PDOException $e) {
             // エラーメッセージを表示
             echo "エラー: " . $e->getMessage();
@@ -136,13 +136,13 @@ class DBManager
 
         return $success; // 登録に成功した場合 true、失敗した場合 false を返す
     }
-    public function motionregist($t_movement, $movement)
+    public function motionregist($m_date, $uId, $t_movement, $movement)
     {
         // ユーザーのカロリーをデータベースに登録する処理
-        $sql = "INSERT INTO motion ( total_movement, movement) VALUES (?, ?)";
+        $sql = "INSERT INTO motion (m_date_id, user_id, total_movement, movement) VALUES (?, (SELECT 'calorie' FROM 'user' WHERE 'user_id' = ?), ?, ?)";
         try {
             $statement = $this->pdo->prepare($sql);
-            $success = $statement->execute([$t_movement, $movement]);
+            $success = $statement->execute([$m_date, $uId, $t_movement, $movement]);
         } catch (PDOException $e) {
             // エラーメッセージを表示
             echo "エラー: " . $e->getMessage();
@@ -151,22 +151,26 @@ class DBManager
 
         return $success; // 登録に成功した場合 true、失敗した場合 false を返す
     }
-    public function calorieupdate($t_calorie, $calorie) {
+    public function calorieupdate($c_date, $uId, $t_calorie, $calorie) {
         $pdo = $this->dbConnect();
         $sql = "UPDATE `calorie` SET `total_movement`=?,`movement`=?, WHERE user_id=?";
 
         $ps = $pdo->prepare($sql);
-        $ps->bindValue(1, $t_calorie, PDO::PARAM_INT);
-        $ps->bindValue(2, $calorie, PDO::PARAM_INT);
+        $ps->bindValue(1, $c_date, PDO::PARAM_INT);
+        $ps->bindValue(2, $uId, PDO::PARAM_INT);
+        $ps->bindValue(3, $t_calorie, PDO::PARAM_INT);
+        $ps->bindValue(4, $calorie, PDO::PARAM_INT);
         $ps->execute();
         $result = $ps->fetchAll();
         return $result;
     }
-    public function motionupdate($t_movement, $movement) {
+    public function motionupdate($m_date, $uId, $t_movement, $movement) {
         $pdo = $this->dbConnect();
         $sql = "UPDATE `motion` SET `total_movement`=?,`movement`=?, WHERE user_id=?";
 
         $ps = $pdo->prepare($sql);
+        $ps->bindValue(1, $m_date, PDO::PARAM_INT);
+        $ps->bindValue(2, $uId, PDO::PARAM_INT);
         $ps->bindValue(1, $t_movement, PDO::PARAM_INT);
         $ps->bindValue(2, $movement, PDO::PARAM_INT);
         $ps->execute();
