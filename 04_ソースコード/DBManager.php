@@ -179,6 +179,12 @@ class DBManager
         $statement = $pdo->prepare($sql);
         $statement->execute(["user_id"]);
     }
+    public function motiondelete($t_movement, $movement) {
+        $pdo = $this->dbConnect();
+        $sql = "DELETE FROM motion WHERE user_id = ?";
+        $statement = $pdo->prepare($sql);
+        $statement->execute(["user_id"]);
+    }
 }
 
 ?>
