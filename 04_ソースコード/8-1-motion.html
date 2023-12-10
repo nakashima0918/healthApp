@@ -37,36 +37,6 @@
         }
         
     </style>
-    <!--<?php
- 
-try {
-    // DB接続
-    $pdo = new PDO(
-        // ホスト名、データベース名
-        'mysql:host=localhost;dbname=healthApp;',
-        // ユーザー名
-        'root',
-        // パスワード
-        '',
-        // レコード列名をキーとして取得させる
-        [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
-    );
-    $stmt = $pdo->prepare('INSERT INTO users (c_date_id, user_id, total_calorie, calorie) VALUES(:id, :name, :address, :tel)');
- 
-    // 値をセット
-    $stmt->bindValue(':', );
-    $stmt->bindValue(':', );
-    $stmt->bindValue(':',);
-    $stmt->bindValue(':',);
- 
-    // SQL実行
-    $stmt->execute();
- 
-} catch (PDOException $e) {
-    // エラー発生
-    echo $e->getMessage();
-}
-?> -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
