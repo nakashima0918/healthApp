@@ -1,25 +1,3 @@
-<!--?php
-session_start();
-$calorie_input = $_POST['calorie'];
-
-if (!empty($_POST)) {
-    // エラーを格納する配列を初期化
-    $error = array(); 
-
-    // 未入力チェック
-    if (empty($_POST['calorie'])) {
-        $error['calorie'] = "数字を入力してください";
-    }
-
-    // 未入力がないか
-    if (empty($error)) {
-        $_SESSION['join'] = $_POST;
-        header('Location: 7-1-nutrition.php');
-        exit();
-    }
-}
-?-->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
