@@ -153,7 +153,7 @@ class DBManager
     }
     public function calorieupdate($c_date, $uId, $t_calorie, $calorie) {
         $pdo = $this->dbConnect();
-        $sql = "UPDATE `calorie` SET `total_movement`=?,`movement`=?, WHERE user_id=?";
+        $sql = "UPDATE `calorie` SET `c_date_id`=?,`user_id`=?,`total_movement`=?,`movement`=?, WHERE user_id=?";
 
         $ps = $pdo->prepare($sql);
         $ps->bindValue(1, $c_date, PDO::PARAM_INT);
