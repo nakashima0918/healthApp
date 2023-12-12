@@ -9,6 +9,10 @@ if (!empty($_POST)) {
     $error = array(); // エラーを格納する配列を初期化
 
     /* 入力情報の不備を検知 */
+    if (empty($_POST['name'])) {
+        $error['name'] = "blank";
+    }
+
     if (empty($_POST['email'])) {
         $error['email'] = "blank";
     }
@@ -108,6 +112,9 @@ if (!empty($_POST)) {
             <div class="control">
                 <label for="name">ユーザー名</label>
                 <input id="name" class="form-control" type="text" name="name">
+                <?php if (!empty($error["name"]) && $error['name'] === 'blank'): ?>
+                <p class="error">＊ユーザー名を入力してください</p>
+                <?php endif ?>
             </div>
 
             <div class="control">

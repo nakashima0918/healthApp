@@ -67,6 +67,23 @@ class DBManager
         return $success; // 登録に成功した場合 true、失敗した場合 false を返す
     }
 
+    public function getUserByEmail($email)
+{
+    // メールアドレスに対応するユーザーを取得する処理
+    $sql = "SELECT * FROM user WHERE address = ?";
+    try {
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute([$email]);
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // エラーメッセージを表示
+        echo "エラー: " . $e->getMessage();
+        return null; // エラーが発生した場合は null を返す
+    }
+
+    return $user; // ユーザーが存在すれば配列、存在しなければ null を返す
+}
+
     // ユーザーのパスワードを更新
     public function updatePass($mail, $pass) {
         $pdo = $this->dbConnect();
