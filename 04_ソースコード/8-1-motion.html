@@ -61,9 +61,8 @@ $dbmng = new DBManager();
             </ul>
         </div> 
     </nav>
-    <div>
-        <button>＜戻る</button>
-    </div>
+    <form>
+    <input type="button" onclick="location.href='4-1-home.html'" value="＜戻る"/>
     <div class="box"  id="momentumBox">
         <div>
             <h2>目標運動量</h2>
@@ -83,8 +82,9 @@ $dbmng = new DBManager();
             oninput="javascript: this.value = this.value.slice(0, 7);"> kcal
         </div>
     </div>
-    <div class="add"><button>追加</button></div>
-    <div><button>リセット</button></div>
+    <input class="add" type="button"追加/>
+    <input class="reset" type="button" value="リセット"/>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
