@@ -43,7 +43,23 @@ $_SESSION['error'] = "";
                 <p>目標カロリー : ****</p> -->
                 <p>ユーザー名 : <?php echo $_SESSION['name'];?></p>
                 <p>メールアドレス : <?php echo $_SESSION['mail'];?></p>
-                <p>パスワード : <?php echo $_SESSION['input_pass'];?></p>
+                <?php
+                    // セッションに保存されたパスワードを取得
+                    if (isset($_SESSION['input_pass'])) {
+                    $password = $_SESSION['input_pass'];
+
+                    // パスワードの長さを取得
+                    $passwordLength = strlen($password);
+
+                    // パスワードの長さ分のアスタリスクを生成
+                    $maskedPassword = str_repeat("*", $passwordLength);
+
+                    // パスワードを表示
+                        echo "<p>Password: $maskedPassword</p>";
+                    } else {
+                        echo "<p>ログインされていません</p>";
+                    }
+                ?>
                 <p>目標運動量 : <?php echo $_SESSION['motion'];?></p>
                 <p>目標カロリー : <?php echo $_SESSION['calorie'];?></p>
 
