@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
         // パスワードが一致した場合はセッションにユーザーIDを保存し、ホームページにリダイレクト
         $_SESSION["user_id"] = $user['user_id'];
-        header("Location: 4-1-home.html");
+        header("Location: 4-1-home.php");
         exit();
     } else {
         // ユーザーが存在しないか、パスワードが一致しない場合はエラーメッセージを表示
@@ -91,14 +91,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <body class="login-body">
 <header class="page-header wrapper">
-        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+        <h1><a href="4-1-home.php"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
             <nav>
                 <ul class="main-nav">
-                    <li><a href="9-1-logout.html">rogout</a></li>
+                    <li><a href="9-2-logout.php">rogout</a></li>
                     <li class="grayout">user</li>
                 </ul>
             </nav>
-    </header>
+</header>
 
     <div class="container login-container">
         <div class="card login-card">
