@@ -55,9 +55,9 @@ $_SESSION['error'] = "";
                     $maskedPassword = str_repeat("*", $passwordLength);
 
                     // パスワードを表示
-                        echo "<p>Password: $maskedPassword</p>";
+                        echo "<p>パスワード: $maskedPassword</p>";
                     } else {
-                        echo "<p>ログインされていません</p>";
+                        echo "<p>パスワード: ログインされていません</p>";
                     }
                 ?>
                 <p>目標運動量 : <?php echo $_SESSION['motion'];?></p>
