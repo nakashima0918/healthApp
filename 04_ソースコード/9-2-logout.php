@@ -13,12 +13,12 @@ session_destroy();
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="logout">
-    <header class="page-header wrapper">
-        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
+<header class="page-header wrapper">
+        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
         <nav>
             <ul class="main-nav">
-                <li><a href="2-1-new_user.php">新規登録</a></li>
-                <li><a href="1-1-login.php">ログイン</a></li>
+                <li class="grayout">ログアウト</li>
+                <li class="grayout">ユーザー</li>
             </ul>
         </nav>
     </header>
