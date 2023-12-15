@@ -13,8 +13,8 @@ session_destroy();
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="logout">
-<header class="page-header wrapper">
-        <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+    <header class="page-header wrapper">
+        <h1><img class="logo" src="img/logo1.png" alt="ロゴ"></h1>
         <nav>
             <ul class="main-nav">
                 <li class="grayout">ログアウト</li>
