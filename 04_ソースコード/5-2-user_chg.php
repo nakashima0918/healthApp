@@ -22,7 +22,7 @@ session_start();
 </head>
 <body id="user_chg">
 <header class="page-header wrapper">
-            <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+            <h1><a href="4-1-home.php"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
             <nav>
                 <ul class="main-nav">
                     <li><a href="9-1-logout.html">ログアウト</a></li>
@@ -36,14 +36,18 @@ session_start();
 
     <h2>ユーザー情報変更</h2>
     <br>
+
     <!-- エラー表示 -->
-    <?php
-        if ($_SESSION['error'] != "") {
-          echo '<div class="error">';
-          echo $_SESSION['error'];
-          echo '</div>';
-        }
-    ?>
+    <div class="error-container">
+        <?php
+            if ($_SESSION['error'] != "") {
+            echo '<div class="error">';
+            echo $_SESSION['error'];
+            echo '</div>';
+            }
+        ?>
+    </div>
+
     <form action='5-6-user_chk.php' method="POST">
         <div class="fild">
             <input type="text" placeholder="ユーザー名" maxlength="20" name="name"><br>

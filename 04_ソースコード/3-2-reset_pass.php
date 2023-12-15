@@ -40,14 +40,13 @@ $_SESSION['mail'] = $_POST['mail'];
     <h2>パスワードを変更する</h2>
 
     <div class="error-container">
-    <!-- エラー表示 -->
-    <?php
-        if ($_SESSION['error'] != "") {
-          echo '<div class="error">';
-          echo $_SESSION['error'];
-          echo '</div>';
-        }
-    ?>
+        <?php
+            if ($_SESSION['error'] != "") {
+                echo '<div class="error">';
+                echo $_SESSION['error'];
+                echo '</div>';
+            }
+        ?>
     </div>
     
     <form action='3-6-reset_pass_chk.php' method="POST">
