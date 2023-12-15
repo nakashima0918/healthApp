@@ -57,8 +57,8 @@ if (!empty($_POST)) {
         <h2>パスワードを忘れた</h2>
         <h3>メールアドレスを入力してください</h3>
 
+        <!-- エラー表示 -->
         <div class="error-container">
-            <!-- エラー表示 -->
             <?php
                 if ($_SESSION['error'] != "") {
                 echo '<div class="error">';

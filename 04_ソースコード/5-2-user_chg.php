@@ -36,14 +36,18 @@ session_start();
 
     <h2>ユーザー情報変更</h2>
     <br>
+
     <!-- エラー表示 -->
-    <?php
-        if ($_SESSION['error'] != "") {
-          echo '<div class="error">';
-          echo $_SESSION['error'];
-          echo '</div>';
-        }
-    ?>
+    <div class="error-container">
+        <?php
+            if ($_SESSION['error'] != "") {
+            echo '<div class="error">';
+            echo $_SESSION['error'];
+            echo '</div>';
+            }
+        ?>
+    </div>
+    
     <form action='5-6-user_chk.php' method="POST">
         <div class="fild">
             <input type="text" placeholder="ユーザー名" maxlength="20" name="name"><br>
