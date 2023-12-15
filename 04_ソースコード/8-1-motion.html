@@ -46,7 +46,7 @@ $dbmng = new DBManager();
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">健康アプリ</a>
+        <a class="navbar-brand" href="4-1-home.php">健康アプリ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,12 +61,12 @@ $dbmng = new DBManager();
             </ul>
         </div> 
     </nav>
-    <form>
-    <input type="button" onclick="location.href='4-1-home.html'" value="＜戻る"/>
+    <form action="" method="post">
+        <input type="button" onclick="history.back()" value="＜戻る">
     <div class="box"  id="momentumBox">
         <div>
             <h2>目標運動量</h2>
-            <h2>kcal</h2>
+            <?php select 'user'  ?><h2>kcal</h2>
         </div>
     </div>
     <div class="container" id="calorie">
@@ -78,7 +78,7 @@ $dbmng = new DBManager();
             <p>運動量の追加</p><br>
             <input type ="number" 
             min="0"
-            max="9999999"
+            max="9999999" required
             oninput="javascript: this.value = this.value.slice(0, 7);"> kcal
         </div>
     </div>

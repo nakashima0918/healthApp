@@ -22,7 +22,7 @@ $_SESSION['error'] = "";
 <body id="user_info">
     <div class="big-bg">
         <header class="page-header wrapper">
-            <h1><a href="4-1-home.html"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+            <h1><a href="4-1-home.php"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
             <nav>
                 <ul class="main-nav">
                     <li><a href="9-1-logout.html">ログアウト</a></li>

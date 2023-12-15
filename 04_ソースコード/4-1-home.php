@@ -23,7 +23,7 @@
         .link-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content:flex-start;
             align-items: center;
             margin-top: 20px;
         }
@@ -38,6 +38,9 @@
             display: block;
             text-align: center;
             transition: background-color 0.3s ease;
+            background-color: #f0f0f0;
+            width: 100%;
+            box-sizing: border-box; 
         }
 
         .link-container a:hover {
@@ -69,14 +72,14 @@
 
     <div class="container mt-4">
         <div class="row justify-content-md-center">
-            <div class="col-md-4 mb-3">
-                <a href="6-1-recipe_list.html"><h3>運動量計算</h3></a>
+            <div class="col-md-4 mb-3 link-container">
+                <a href="8-1-motion.html"><h3>運動量計算</h3></a>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4 mb-3 link-container">
                 <a href="7-1-nutrition.html"><h3>栄養トラッカー</h3></a>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="8-1-motion.html"><h3>健康レシピ</h3></a>
+            <div class="col-md-4 mb-3 link-container">
+                <a href="6-1-recipe_list.html"><h3>健康レシピ</h3></a>
             </div>
         </div>
     </div>
