@@ -194,13 +194,13 @@ class DBManager
         $result = $ps->fetchAll();
         return $result;
     }
-    public function coloriedelete($t_calorie, $calorie) {
+    public function coloriedelete($uId) {
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM calorie WHERE user_id = ?";
         $statement = $pdo->prepare($sql);
         $statement->execute(["user_id"]);
     }
-    public function motiondelete($t_movement, $movement) {
+    public function motiondelete($uId) {
         $pdo = $this->dbConnect();
         $sql = "DELETE FROM motion WHERE user_id = ?";
         $statement = $pdo->prepare($sql);
