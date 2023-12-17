@@ -460,6 +460,52 @@ aside p {
   text-align: center;
 }
 
+/*6-2
+-------------------------------*/
+
+
+  .recipe-info {
+    float: left;
+    width: 30%; /* 左側に写真を配置するための幅 */
+    margin-right: 20px;
+  }
+
+  .recipe-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .recipe-name {
+    margin-top: 0; /* 名前の上の余白を除去 */
+  }
+
+  .ingredients {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .ingredients-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ingredient-item {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .ingredients-left,
+    .ingredients-right {
+      flex: 1;
+      margin-right: 1em; /* 全角二文字分の隙間を作る */
+      border: 1px solid #ccc; /* 灰色の枠を追加 */
+      padding: 10px; /* 枠内の余白を追加 */
+      border-radius: 8px; /* 枠の角を丸くする */
+      background-color: #f4f4f4; /* 枠内の背景色を灰色にする */
+    }
+
+
 /*9-1
 -------------------------------*/
 /*背景色*/
