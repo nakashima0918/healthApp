@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* 共通部分
+---------------------------------------*/
+html {
+    font-size: 100%;
+}
+body {
+    /*font-family: "Yu Gothic Medium","游ゴシック Medium",YuGothic,"游ゴシック体",ヒラギノ角ゴ pro W3",sans-serif;*/
+    line-height: 1.7;
+    color: #432;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+/* header
+------------------------------*/
+/*ロゴ*/
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+
+/*ヘッダーの文字の設定*/
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    /*text-transform: uppercase;  大文字にする*/
+    text-transform: lowercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #432;
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+/*右にずらし余白を均等に割り振る*/
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+/*横幅*/
+.wrapper {
+    max-width: 3100px;/*1100px がいいかも*/
+    margin: 0 auto;
+    padding: 0 4%;
+}
+/*文字のグレーアウト*/
+.grayout {
+    color: #bfbfbf;
+}
+
+/*大きな背景画像*/
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+}
+
+/*メニュー
+----------------------------------------------------------------*/
+#menu {
+    background-image: url(../img/k.jpg);
+    min-height: 100vh;
+}
+.menu-content {
+    max-width: 560px;
+    margin-top: 10%;
+}
+.menu-content .page-title {
+    text-align: center;
+}
+.menu-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+
+p {
+    font-family: 'Philosopher', serif;
+}
+
+
+.grid {
+    display: grid;
+    gap: 26px;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+/* フッター
+-----------------------------------------------------------------*/
+footer {
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+/* 記事部分 */
+article {
+    width: 74%;
+}
+
