@@ -1,7 +1,7 @@
 <!--?php
 session_start();
 require_once './DBManager.php';
-$dbmng = new DBManager();
+
 ?-->
 
 <!DOCTYPE html>
@@ -28,19 +28,32 @@ $dbmng = new DBManager();
         display: grid;
         place-items: center;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
-        }
-        .container{
-        display: flex;
-        }
-        .box2{
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 10px;
+    }
+    .col-1{
+        grid-column: 1 span;
+    }
+    .col-2{
+        grid-column: 2 span;
+    }
+    .box2{
         text-align: center;
+        margin : auto;
+        place-items: center;
         padding: 5%;
-        height : 120px;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 10%;  
+        height : 150px;
+        grid-column: 4 span;
+        margin-top: 15%;
+        display : inline-block;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
-        }
+    }
+    .reset{
+        text-align: center;
+    }
         
     </style>
 </head>
@@ -66,24 +79,30 @@ $dbmng = new DBManager();
     <div class="box"  id="momentumBox">
         <div>
             <h2>目標運動量</h2>
-            <?php select 'user'  ?><h2>kcal</h2>
+            <!-- ?php echo $_SESSION['m_goal']; ?--><h2>kcal</h2>
         </div>
     </div>
     <div class="container" id="calorie">
+        <div class="col-1"></div>
         <div class="box2" id="SpoTotal">
-            合計運動量<br>
-            kcal
+            <h4>合計運動量</h4>
+            <!-- ?php echo $_SESSION['t_movement']; ?--><h3>kcal</h3>
         </div>
+        <div class="col-2"></div>
         <div class="box2" id="SpoAdd">
-            <p>運動量の追加</p><br>
+            <h4>運動量の追加</h4>
             <input type ="number" 
             min="0"
-            max="9999999" required
-            oninput="javascript: this.value = this.value.slice(0, 7);"> kcal
+            max="9999999" 
+            oninput="javascript: this.value = this.value.slice(0, 7);" >kcal
+            <div class="add"><button>追加</button></div>
         </div>
+        <div class="col-1"></div>
     </div>
-    <input class="add" type="button"追加/>
-    <input class="reset" type="button" value="リセット"/>
+    
+    <div class="reset" id="reset">
+        <button>リセット</button>
+    </div>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
