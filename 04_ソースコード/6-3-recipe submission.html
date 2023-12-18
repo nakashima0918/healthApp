@@ -7,14 +7,52 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header class="page-header wrapper">
-        <h1><a href="home.html"><img class="logo" src="#" alt="ロゴ"></a></h1>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="1-1-login.html">ログアウト</a></li>
-                <li><a href="5-1-user_info.html">ユーザー</a></li>
-            </ul>
-        </nav>
+    <!-- css -->
+   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+   <link href="https:fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+   <link href="css/style3.css" rel="stylesheet">
+   <!-- アイコン -->
+   <link rel="icon" type="igm/jpg" href="img/logo1.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="recipe" class="text-center back-color">
+        <!-- ヘッダー -->
+        <div class="container-fluid" style="padding-left: 0">
+            <div class="row header-style">
+              <div class="col-9 header-L">
+          <header class="page-header wrapper">
+            <h1><a href="4-1-home.php"><img class="logo" src="img/logo1.png" alt="ロゴ"></a></h1>
+              <nav>
+                  <ul class="main-nav">
+                      <li><a href="9-1-logout.html">ログアウト</a></li>
+                      <li><a href="5-1-user_info.php">ユーザー</a></li>
+                  </ul>
+              </nav>
+      </header>
+          </div>
+            </div>
+              </div>
+        <form>
+            <label for="recipeImage">写真を選択</label>
+            <input type="file" id="recipeImage" name="recipeImage" accept="image/*">
+    
+        
+            <label for="recipeName">レシピの名前</label>
+            <input type="text" id="recipeName" name="recipeName" required>
+        
+            <label for="recipeDescription">レシピの説明</label>
+            <textarea id="recipeDescription" name="recipeDescription" rows="4" required></textarea>
+            <label for="ingredients">材料</label>
+    <textarea id="ingredients" name="ingredients" rows="4" required class="grid-item"></textarea>
+
+    <label for="amounts">量</label>
+    <textarea id="amounts" name="amounts" rows="4" required class="grid-item"></textarea>
+
+    <label for="instructions">作り方</label>
+    <textarea id="instructions" name="instructions" rows="8" required class="grid-item full"></textarea>
+            <a href="6-4-recipecomplete.html">投稿する</a>
+        </form>
+      
         
 </body>
 </html>

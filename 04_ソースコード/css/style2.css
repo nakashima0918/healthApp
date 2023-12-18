@@ -115,3 +115,22 @@ article {
     width: 74%;
 }
 
+/*ボタン
+---------------------------------------------------------*/
+.s-button {
+    font-size: 0.688rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 5px;
+    padding: 9px 16px;
+
+    display: block; /* ボタンをブロック要素に変更 */
+    text-align: center; /* テキストを水平中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で中央に配置 */
+    width: 100px; /* 必要に応じてボタンの幅を設定 */
+    margin-top: 50px;
+}
+
+.s-button:hover {
+    background: #0090aa;
+}
