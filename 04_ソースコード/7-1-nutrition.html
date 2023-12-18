@@ -1,3 +1,8 @@
+<!-- ?php 
+    session_start();
+    required_once "./DBManager.php";
+
+? -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,17 +30,29 @@
         background : linear-gradient(to bottom,#cccccc, #cccccc);
     }
     .container{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 10px;
+    }
+    .col-1{
+        grid-column: 1 span;
+    }
+    .col-2{
+        grid-column: 2 span;
     }
     .box2{
         text-align: center;
+        margin : auto;
+        place-items: center;
         padding: 5%;
         height : 150px;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 10%;
+        grid-column: 4 span;
+        margin-top: 15%;
         display : inline-block;
         background : linear-gradient(to bottom,#cccccc, #cccccc);
+    }
+    .reset{
+        text-align: center;
     }
 </style>
 </head>
@@ -56,33 +73,35 @@
             </ul>
         </div> 
     </nav>
-<form action="">
-    <div>
-        <button>＜戻る</button>
-    </div>
+<from action="">
+    <input type="button" onclick="history.back()" value="＜戻る">
     <div class="box"  id="momentumBox">
         <div>
             <h2>一日の摂取カロリー</h2>
-            <h2>kcal</h2>
+            <!--?php echo $_SESSION['c_goal']; ?--><h2>kcal</h2>
         </div>
     </div>
     <div class ="container" id="calorie">
+        <div class="col-1"></div>
         <div class="box2" id="momentumBox2">
-            <h3>取得カロリー</h3>
+            <h4>取得カロリー</h4>
+            <!--?php echo $_SESSION['t_calorie']; ?--><h3>kcal</h3>
         </div>
+        <div class="col-2"></div>
         <div class="box2" id="momentumBox2">
-            <h3>カロリーの追加</h3>
+            <h5>カロリーの追加</h5>
             <input type ="number" 
             min="0"
             max="9999"
-            oninput="javascript: this.value = this.value.slice(0, 4);"> 
+            oninput="javascript: this.value = this.value.slice(0, 4);" > <p>kcal</p><br>
+            <div class="add"><button>追加</button></div>
         </div>
+        <div class="col-1"></div>
     </div>
-    <div class="add"><button>追加</button></div>
     <div class="reset" id="reset">
         <button>リセット</button>
     </div>
-</form>
+</from>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
