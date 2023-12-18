@@ -140,6 +140,10 @@ img {
       border-radius: 8px; /* 枠の角を丸くする */
       background-color: #f4f4f4; /* 枠内の背景色を灰色にする */
     }
+    #recipe {
+        background-color: #FCF9EF;
+        height:100vh;
+    }
 /*6-3
 -------------------------------*/
 
